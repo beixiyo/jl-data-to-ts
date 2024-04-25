@@ -1,0 +1,52 @@
+{
+    "name": "@jl-org/data-to-ts",
+    "version": "0.0.1",
+    "description": "JSON 或者 JS 转 TS",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "type": "module",
+    "types": "dist/typings/index.d.ts",
+    "files": [
+        "/dist"
+    ],
+    "exports": {
+        "require": {
+            "types": "./dist/typings/index.d.ts",
+            "default": "./dist/index.cjs"
+        },
+        "import": {
+            "types": "./dist/typings/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "rollup -c && tsc-alias",
+        "test": "pnpm -C test test"
+    },
+    "keywords": [
+        "js-to-ts",
+        "json-to-ts"
+    ],
+    "author": "CJL",
+    "license": "MIT",
+    "devDependencies": {
+        "@rollup/plugin-alias": "^5.1.0",
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.5",
+        "@types/node": "^20.11.17",
+        "rollup": "^4.6.1",
+        "rollup-plugin-clear": "^2.0.7",
+        "tsc-alias": "^1.8.8",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "json-to-ts": "^2.1.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "homepage": "https://github.com/beixiyo/jl-tool"
+}

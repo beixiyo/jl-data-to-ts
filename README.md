@@ -1,0 +1,100 @@
+# JS | JSON 转 TS
+
+对 `json-to-ts` 包的增强  
+扩展原先不存在的功能
+
+1. 支持 *JavaScript* 对象转 *TS*
+2. 支持 *JavaScript* 包含变量声明的对象转 *TS*
+3. 支持导出配置
+
+---
+
+## 安装
+```bash
+npm i @jl-org/data-to-ts
+```
+
+## 使用
+
+```ts
+import { dataToTs } form '@jl-org/data-to-ts'
+
+/** 标准 JSON */
+const json = `{
+    "lease": {
+        "term": "36 months",
+        "monthlyPayment": "$199",
+        "dueAtSigning": "$3,000"
+    },
+    "purchase": {
+        "price": "$21,570",
+        "downPayment": "$2,500"
+    }
+}`
+
+console.log(dataToTs(json, {
+    enableExport: false,
+    useTypeAlias: false,
+    rootName: 'Test'
+}).join('\n'))
+
+
+/** JavaScript 对象字面量 */
+const js1 = `const data = {
+    lease: {
+        term: '36 months',
+        monthlyPayment: '$199',
+        dueAtSigning: '$3,000'
+    },
+    purchase: {
+        price: '$21,570',
+        downPayment: '$2,500'
+    }
+}`
+console.log(dataToTs(js1).join('\n'))
+
+
+/** 混合单双引号的对象 */
+const js2 = `var data = {
+    "lease": {
+        term: '36 months',
+        monthlyPayment: '$199',
+        dueAtSigning: '$3,000'
+    },
+    'purchase': {
+        price: '$21,570',
+        downPayment: '$2,500'
+    }
+}`
+console.log(dataToTs(js2).join('\n'))
+
+
+/** 没有命名的对象 */
+const js3 = `{
+    lease: {
+        term: '36 months',
+        monthlyPayment: '$199',
+        dueAtSigning: '$3,000'
+    },
+    purchase: {
+        price: '$21,570',
+        downPayment: '$2,500'
+    }
+}`
+console.log(dataToTs(js3).join('\n'))
+
+
+/** 未声明的全局变量 */
+const js4 = `a = {
+    lease: {
+        term: '36 months',
+        monthlyPayment: '$199',
+        dueAtSigning: '$3,000'
+    },
+    purchase: {
+        price: '$21,570',
+        downPayment: '$2,500'
+    }
+}`
+console.log(dataToTs(js4).join('\n'))
+```
