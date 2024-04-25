@@ -1,6 +1,6 @@
 {
     "name": "@jl-org/data-to-ts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "JSON 或者 JS 转 TS",
     "main": "dist/index.cjs",
     "module": "dist/index.js",
