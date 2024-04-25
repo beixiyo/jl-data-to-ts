@@ -25,6 +25,7 @@
     },
     "keywords": [
         "js-to-ts",
+        "data-to-ts",
         "json-to-ts"
     ],
     "author": "CJL",
@@ -48,5 +49,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "homepage": "https://github.com/beixiyo/jl-tool"
+    "homepage": "https://github.com/beixiyo/jl-data-to-ts"
 }
