@@ -34,9 +34,6 @@ devDependencies:
   rollup-plugin-clear:
     specifier: ^2.0.7
     version: 2.0.7
-  rollup-plugin-polyfill-node:
-    specifier: ^0.13.0
-    version: 0.13.0(rollup@4.16.4)
   tsc-alias:
     specifier: ^1.8.8
     version: 1.8.8
@@ -134,21 +131,6 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.10
-      rollup: 4.16.4
-    dev: true
-
-  /@rollup/plugin-inject@5.0.5(rollup@4.16.4):
-    resolution: {integrity: sha512-2+DEJbNBoPROPkgTDNe8/1YXWcqxbN5DTjASVIOx8HS+pITXushyNiBV56RB08zuptzz8gT3YfkqriTBVycepg==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@4.16.4)
-      estree-walker: 2.0.2
       magic-string: 0.30.10
       rollup: 4.16.4
     dev: true
@@ -1231,15 +1213,6 @@ packages:
     resolution: {integrity: sha512-Hg8NC3JcJBO1ofgyQC0IACpyKn/yhHPGZ3C7R3ubNGWUXy9JXHQrewk4J4hVcZznw6SOKayLsaNae596Rwt8Vg==}
     dependencies:
       rimraf: 2.7.1
-    dev: true
-
-  /rollup-plugin-polyfill-node@0.13.0(rollup@4.16.4):
-    resolution: {integrity: sha512-FYEvpCaD5jGtyBuBFcQImEGmTxDTPbiHjJdrYIp+mFIwgXiXabxvKUK7ZT9P31ozu2Tqm9llYQMRWsfvTMTAOw==}
-    peerDependencies:
-      rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
-    dependencies:
-      '@rollup/plugin-inject': 5.0.5(rollup@4.16.4)
-      rollup: 4.16.4
     dev: true
 
   /rollup@4.16.4:

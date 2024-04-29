@@ -1,4 +1,4 @@
-import { dataToTs } from '../src'
+import { dataToTs } from '../dist/index.js'
 
 
 let passCount = 0
@@ -93,7 +93,7 @@ console.log(dataToTs(js5).join('\n'))
 pass(true)
 
 
-function pass(done?: boolean) {
+function pass(done) {
     console.log(`\ntest success：${++passCount}`, '-'.repeat(20))
     done && console.log(`all test success：${passCount === allCount ? '✅' : '❌'}`)
 }

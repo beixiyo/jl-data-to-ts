@@ -1,6 +1,6 @@
 {
     "name": "@jl-org/data-to-ts",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "JSON 或者 JS 转 TS",
     "main": "dist/index.cjs",
     "module": "dist/index.js",
@@ -39,7 +39,6 @@
         "@types/node": "^20.11.17",
         "rollup": "^4.6.1",
         "rollup-plugin-clear": "^2.0.7",
-        "rollup-plugin-polyfill-node": "^0.13.0",
         "tsc-alias": "^1.8.8",
         "tslib": "^2.6.2",
         "typescript": "^5.3.3"
