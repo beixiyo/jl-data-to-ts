@@ -97,4 +97,13 @@ const js4 = `a = {
     }
 }`
 console.log(dataToTs(js4).join('\n'))
+
+
+/** 值带有冒号的 */
+const js5 = `{
+    jobName: "",
+    "createdTime": "2024-04-28 14:24:54",
+    "createdBy": ""
+}`
+console.log(dataToTs(js5).join('\n'))
 ```

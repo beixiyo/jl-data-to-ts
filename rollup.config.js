@@ -6,6 +6,7 @@ import alias from '@rollup/plugin-alias'
 import clear from 'rollup-plugin-clear'
 import { fileURLToPath } from 'node:url'
 import commonjs from '@rollup/plugin-commonjs'
+import nodePolyfills from 'rollup-plugin-polyfill-node'
 
 
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
     ],
     plugins: [
         nodeResolve(),  // 开启`node_modules`查找模块功能
+        nodePolyfills(),
         commonjs(),
         terser(),
         typescript(),

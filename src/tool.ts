@@ -1,14 +1,9 @@
-export function isJSObj(code: string) {
-    const reg = /(?<!:)(\w+)\s*:/g
-    return code.match(reg) ? true : false
-}
-
 export function jsToJSON(code: string) {
     code = delJSDeclare(code)
     code = singleQuoteToDouble(code)
     
-    const reg = /(?<!:)(\w+)\s*:/g
-    return code.replace(reg, (match, g1) => {
+    const reg = /(?<=\{|\}|,|\n)\s*([a-zA-Z0-9_$-]+)\s*:(?!["'])/g
+    return code.replace(reg, (_match, g1) => {
         return `"${g1.trim()}":`
     })
 }

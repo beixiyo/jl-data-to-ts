@@ -1,8 +1,8 @@
-import { dataToTs } from '../dist/index.js'
+import { dataToTs } from '../src'
 
 
 let passCount = 0
-const allCount = 5
+const allCount = 6
 
 const json = `{
     "lease": {
@@ -84,7 +84,16 @@ console.log(dataToTs(js4).join('\n'))
 pass()
 
 
-function pass() {
-    console.log(`test success：${++passCount}`, '-'.repeat(20))
-    console.log(`all test success：${passCount === allCount ? '✅' : '❌'}`)
+const js5 = `{
+    jobName: "",
+    "createdTime": "2024-04-28 14:24:54",
+    "createdBy": ""
+}`
+console.log(dataToTs(js5).join('\n'))
+pass(true)
+
+
+function pass(done?: boolean) {
+    console.log(`\ntest success：${++passCount}`, '-'.repeat(20))
+    done && console.log(`all test success：${passCount === allCount ? '✅' : '❌'}`)
 }
