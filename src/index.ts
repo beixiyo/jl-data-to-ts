@@ -2,14 +2,14 @@ import jtt from 'json-to-ts'
 import { delSemicolons, jsToJSON } from './tool'
 
 
-export function dataToTs(code: string, config?: JTTOpts) {
+export function dataToTs(code: string, config?: DTTOpts) {
     const _code = jsToJSON(code)
     const _config = {
         ...{
             enableExport: true,
             useTypeAlias: true,
             needSemicolons: false,
-        } as JTTOpts,
+        } as DTTOpts,
         ...config
     }
 
@@ -27,7 +27,7 @@ export function dataToTs(code: string, config?: JTTOpts) {
 }
 
 
-export type JTTOpts = {
+export type DTTOpts = {
     /** 需要导出吗，默认导出 */
     enableExport?: boolean
     /** 需要分号吗，默认不需要分号 */
