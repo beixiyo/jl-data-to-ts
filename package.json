@@ -21,7 +21,8 @@
     },
     "scripts": {
         "build": "rollup -c && tsc-alias",
-        "test": "pnpm -C test test"
+        "test": "node ./test/index.test.js",
+        "dev": "vite"
     },
     "keywords": [
         "js-to-ts",
@@ -41,7 +42,8 @@
         "rollup-plugin-clear": "^2.0.7",
         "tsc-alias": "^1.8.8",
         "tslib": "^2.6.2",
-        "typescript": "^5.3.3"
+        "typescript": "^5.3.3",
+        "vite": "^5.4.6"
     },
     "dependencies": {
         "json-to-ts": "^2.1.0"
