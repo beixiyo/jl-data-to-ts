@@ -3,35 +3,35 @@ import { delSemicolons, jsToJSON } from './tool'
 
 
 export function dataToTs(code: string, config?: DTTOpts) {
-    const _code = jsToJSON(code)
-    const _config = {
-        ...{
-            enableExport: true,
-            useTypeAlias: true,
-            needSemicolons: false,
-        } as DTTOpts,
-        ...config
-    }
+  const _code = jsToJSON(code)
+  const _config = {
+    ...{
+      enableExport: true,
+      useTypeAlias: true,
+      needSemicolons: false,
+    } as DTTOpts,
+    ...config
+  }
 
-    const { enableExport, needSemicolons, ...jttOpts } = _config
-    let typeArr = jtt(JSON.parse(_code), jttOpts)
+  const { enableExport, needSemicolons, ...jttOpts } = _config
+  let typeArr = jtt(JSON.parse(_code), jttOpts)
 
-    if (enableExport) {
-        typeArr = typeArr.map((t) => `export ${t}`)
-    }
-    if (!needSemicolons) {
-        typeArr = typeArr.map((t) => delSemicolons(t))
-    }
+  if (enableExport) {
+    typeArr = typeArr.map((t) => `export ${t}`)
+  }
+  if (!needSemicolons) {
+    typeArr = typeArr.map((t) => delSemicolons(t))
+  }
 
-    return typeArr
+  return typeArr
 }
 
 
 export type DTTOpts = {
-    /** 需要导出吗，默认导出 */
-    enableExport?: boolean
-    /** 需要分号吗，默认不需要分号 */
-    needSemicolons?: boolean
-    useTypeAlias?: boolean
-    rootName?: string
+  /** 需要导出吗，默认导出 */
+  enableExport?: boolean
+  /** 需要分号吗，默认不需要分号 */
+  needSemicolons?: boolean
+  useTypeAlias?: boolean
+  rootName?: string
 }
